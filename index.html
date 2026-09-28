@@ -1,11 +1,274 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Andrés Felipe Rocha Rodríguez · Desarrollador Junior Full Stack</title>
+  <meta name="description" content="Portafolio de Andrés Felipe Rocha Rodríguez, desarrollador junior full stack y técnico en sistemas. Python, HTML, CSS, JavaScript y Git.">
+  <meta name="theme-color" content="#010003">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
 </head>
 <body>
-    
+  <a class="skip-link" href="#contenido">Saltar al contenido</a>
+
+  <!-- Decoración de fondo -->
+  <div class="ambient" aria-hidden="true"></div>
+  <div class="cursor-glow" aria-hidden="true"></div>
+  <div class="progress" aria-hidden="true"></div>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="#inicio" aria-label="Ir al inicio">Andrés Rocha</a>
+
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="menu" aria-label="Abrir menú">
+        <span></span><span></span>
+      </button>
+
+      <nav class="nav" id="menu" aria-label="Principal">
+        <ul>
+          <li><a href="#sobre-mi">Sobre mí</a></li>
+          <li><a href="#habilidades">Habilidades</a></li>
+          <li><a href="#proyectos">Proyectos</a></li>
+          <li><a href="#trayectoria">Trayectoria</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="contenido">
+    <!-- INICIO -->
+    <section class="hero container" id="inicio" aria-labelledby="titulo-hero">
+      <div class="hero-text">
+        <p class="hello">Hola, soy</p>
+        <h1 id="titulo-hero">Andrés Felipe Rocha Rodríguez</h1>
+        <p class="role">Desarrollador Junior Full Stack</p>
+        <p class="lead">Técnico en Sistemas en formación. Construyo aplicaciones web y sistemas de gestión con Python, HTML, CSS y JavaScript.</p>
+        <div class="actions">
+          <a class="btn btn-primary" href="#proyectos">Ver proyectos</a>
+          <a class="btn" href="#contacto">Contactar</a>
+        </div>
+      </div>
+
+      <!-- Para cambiar la foto, reemplaza el archivo assets/foto.webp -->
+      <figure class="photo" id="photo">
+        <div class="photo-frame">
+          <img
+            src="assets/foto.webp"
+            alt="Retrato de Andrés Felipe Rocha Rodríguez"
+            width="800" height="1000"
+            decoding="async" fetchpriority="high">
+          <span class="photo-fallback" aria-hidden="true">AR</span>
+        </div>
+      </figure>
+    </section>
+
+    <!-- SOBRE MÍ -->
+    <section class="section container" id="sobre-mi" aria-labelledby="titulo-sobre">
+      <h2 class="section-title" id="titulo-sobre" data-reveal>Sobre mí</h2>
+      <div class="about" data-stagger>
+        <p data-reveal>Soy desarrollador en formación y Técnico en Sistemas del SENA. Tengo competencias en Python, desarrollo web y diseño técnico en SolidWorks, además de experiencia en control de versiones con Git y GitHub y en soporte de hardware.</p>
+        <p data-reveal>Me caracterizo por un enfoque analítico, disciplina y capacidad de aprendizaje para resolver problemas e integrarme bien en equipos de trabajo.</p>
+      </div>
+    </section>
+
+    <!-- HABILIDADES -->
+    <section class="section container" id="habilidades" aria-labelledby="titulo-habilidades">
+      <h2 class="section-title" id="titulo-habilidades" data-reveal>Habilidades</h2>
+
+      <h3 class="sub" data-reveal>Técnicas</h3>
+      <ul class="pills" data-stagger>
+        <li data-reveal>Python</li>
+        <li data-reveal>HTML5</li>
+        <li data-reveal>CSS3</li>
+        <li data-reveal>JavaScript</li>
+        <li data-reveal>Git</li>
+        <li data-reveal>GitHub</li>
+        <li data-reveal>VS Code</li>
+        <li data-reveal>SolidWorks</li>
+      </ul>
+
+      <h3 class="sub" data-reveal>Competencias</h3>
+      <ul class="pills pills-soft" data-stagger>
+        <li data-reveal>Resolución de problemas</li>
+        <li data-reveal>Trabajo en equipo</li>
+        <li data-reveal>Creatividad</li>
+        <li data-reveal>Empatía</li>
+        <li data-reveal>Disciplina</li>
+        <li data-reveal>Aprendizaje continuo</li>
+        <li data-reveal>Adaptabilidad</li>
+      </ul>
+    </section>
+
+    <!-- PROYECTOS -->
+    <section class="section container" id="proyectos" aria-labelledby="titulo-proyectos">
+      <h2 class="section-title" id="titulo-proyectos" data-reveal>Proyectos</h2>
+
+      <ul class="projects" data-stagger>
+        <li data-reveal>
+          <article class="project">
+            <h3>VANTA CINEMA</h3>
+            <ul class="stack" aria-label="Tecnologías">
+              <li>HTML5</li><li>CSS3</li><li>JavaScript</li><li>API TMDB</li><li>JSON Server</li>
+            </ul>
+            <h4>Qué es</h4>
+            <p>Sistema web para consultar la cartelera de un cine, con catálogo de películas en tiempo real y perfiles de usuario.</p>
+            <h4>Cómo lo hice</h4>
+            <p>Armé la interfaz con HTML5 y CSS3 y la lógica con JavaScript. Los datos de las películas vienen de la API de TMDB, y JSON Server guarda salas, funciones, asientos, reservas, compras y valoraciones.</p>
+            <a class="btn btn-primary" href="https://github.com/andresfeliperocharodriguez13-coder/VANTA-CINEMA" target="_blank" rel="noopener noreferrer">Ver repositorio</a>
+          </article>
+        </li>
+
+        <li data-reveal>
+          <article class="project">
+            <h3>NEXUS TECH</h3>
+            <ul class="stack" aria-label="Tecnologías">
+              <li>HTML5</li><li>CSS3</li><li>JavaScript</li><li>Masonry Grid</li>
+            </ul>
+            <h4>Qué es</h4>
+            <p>Portal web responsivo para organizar y visualizar eventos tecnológicos de forma interactiva.</p>
+            <h4>Cómo lo hice</h4>
+            <p>Maqueté el portal con una cuadrícula Masonry para acomodar los eventos en tarjetas de distinta altura, cuidando que se adapte a móvil, tablet y escritorio.</p>
+            <!-- Cambia esta URL por el enlace exacto del repositorio -->
+            <a class="btn btn-primary" href="https://github.com/AndresRocha07" target="_blank" rel="noopener noreferrer">Ver repositorio</a>
+          </article>
+        </li>
+
+        <li data-reveal>
+          <article class="project">
+            <h3>Sistema de Farmacia</h3>
+            <ul class="stack" aria-label="Tecnologías">
+              <li>Python</li>
+            </ul>
+            <h4>Qué es</h4>
+            <p>Sistema de gestión para una farmacia: inventario, control de stock de medicamentos, ventas y registro de clientes.</p>
+            <h4>Cómo lo hice</h4>
+            <p>Lo desarrollé en Python, diseñando la lógica que controla el inventario y el stock, registra cada venta y administra los datos de los clientes.</p>
+            <!-- Cambia esta URL por el enlace exacto del repositorio -->
+            <a class="btn btn-primary" href="https://github.com/AndresRocha07" target="_blank" rel="noopener noreferrer">Ver repositorio</a>
+          </article>
+        </li>
+
+        <li data-reveal>
+          <article class="project">
+            <h3>Liga BetPlay</h3>
+            <ul class="stack" aria-label="Tecnologías">
+              <li>Python</li>
+            </ul>
+            <h4>Qué es</h4>
+            <p>Sistema para el control y seguimiento de torneos deportivos.</p>
+            <h4>Cómo lo hice</h4>
+            <p>Desarrollé en Python la lógica de negocio y la administración de los datos necesarios para llevar el control del torneo.</p>
+            <!-- Cambia esta URL por el enlace exacto del repositorio -->
+            <a class="btn btn-primary" href="https://github.com/AndresRocha07" target="_blank" rel="noopener noreferrer">Ver repositorio</a>
+          </article>
+        </li>
+      </ul>
+    </section>
+
+    <!-- TRAYECTORIA -->
+    <section class="section container" id="trayectoria" aria-labelledby="titulo-trayectoria">
+      <h2 class="section-title" id="titulo-trayectoria" data-reveal>Trayectoria</h2>
+
+      <div class="tabs" role="tablist" aria-label="Trayectoria" data-reveal>
+        <button class="tab active" role="tab" id="tab-exp" aria-selected="true" aria-controls="panel-exp" type="button">Experiencia</button>
+        <button class="tab" role="tab" id="tab-edu" aria-selected="false" aria-controls="panel-edu" tabindex="-1" type="button">Formación</button>
+        <span class="tab-indicator" aria-hidden="true"></span>
+      </div>
+
+      <div class="panel" role="tabpanel" id="panel-exp" aria-labelledby="tab-exp">
+        <ol class="timeline">
+          <li class="t-item" data-reveal>
+            <div class="t-head">
+              <h3>Sistemas de gestión en Python</h3>
+              <p class="org">Campuslands · Proyectos académicos</p>
+              <p class="date">Actualidad</p>
+            </div>
+            <p class="t-body">Diseño e implementación de los sistemas de Farmacia (inventario, stock, ventas y clientes) y Liga BetPlay (lógica de negocio y administración de datos de torneos).</p>
+          </li>
+          <li class="t-item" data-reveal>
+            <div class="t-head">
+              <h3>Desarrollo web frontend</h3>
+              <p class="org">VANTA CINEMA · NEXUS TECH</p>
+              <p class="date">Campuslands</p>
+            </div>
+            <p class="t-body">VANTA CINEMA con HTML, CSS y JavaScript integrada a la API de TMDB, y NEXUS TECH, un portal responsivo con Masonry Grid para eventos tecnológicos.</p>
+          </li>
+          <li class="t-item" data-reveal>
+            <div class="t-head">
+              <h3>Soporte técnico y mantenimiento de equipos</h3>
+              <p class="org">SENA · Colegio Técnico Vicente Azuero</p>
+              <p class="date">Proyecto escolar</p>
+            </div>
+            <p class="t-body">Mantenimiento preventivo y correctivo de hardware y software, diagnóstico de componentes, instalación de sistemas operativos y soporte a usuarios.</p>
+          </li>
+        </ol>
+      </div>
+
+      <div class="panel" role="tabpanel" id="panel-edu" aria-labelledby="tab-edu" hidden>
+        <ol class="timeline">
+          <li class="t-item" data-reveal>
+            <div class="t-head">
+              <h3>Bootcamp de desarrollo de software</h3>
+              <p class="org">Campuslands · Floridablanca</p>
+              <p class="date">Actualidad</p>
+            </div>
+            <p class="t-body">Formación en desarrollo de software con Python, HTML, CSS, JavaScript y control de versiones con Git y GitHub.</p>
+          </li>
+          <li class="t-item" data-reveal>
+            <div class="t-head">
+              <h3>Técnico en Sistemas</h3>
+              <p class="org">SENA · Floridablanca</p>
+              <p class="date">2024 – 2025</p>
+            </div>
+            <p class="t-body">Formación técnica en sistemas, con énfasis en soporte y mantenimiento de hardware y software.</p>
+          </li>
+          <li class="t-item" data-reveal>
+            <div class="t-head">
+              <h3>SolidWorks</h3>
+              <p class="org">Colegio Técnico Vicente Azuero</p>
+              <p class="date">2024 – 2025</p>
+            </div>
+            <p class="t-body">Formación en diseño técnico asistido por computador (CAD).</p>
+          </li>
+          <li class="t-item" data-reveal>
+            <div class="t-head">
+              <h3>Bachiller</h3>
+              <p class="org">Colegio Técnico Vicente Azuero</p>
+              <p class="date">2022 – 2025</p>
+            </div>
+            <p class="t-body">Bachillerato técnico.</p>
+          </li>
+        </ol>
+      </div>
+
+      <h3 class="sub" data-reveal>Idiomas</h3>
+      <ul class="pills pills-soft" data-stagger>
+        <li data-reveal>Español · Nativo</li>
+        <li data-reveal>Inglés · A2.2</li>
+      </ul>
+    </section>
+
+    <!-- CONTACTO -->
+    <section class="section container contact" id="contacto" aria-labelledby="titulo-contacto">
+      <h2 class="section-title" id="titulo-contacto" data-reveal>Contacto</h2>
+      <p data-reveal>Puedes ver todo mi código y mis proyectos en mi perfil de GitHub.</p>
+      <div data-reveal>
+        <a class="btn btn-primary btn-lg" href="https://github.com/AndresRocha07" target="_blank" rel="noopener noreferrer">Ir a mi GitHub</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© <span id="year">2026</span> Andrés Felipe Rocha Rodríguez</p>
+      <a href="#inicio">Volver arriba</a>
+    </div>
+  </footer>
 </body>
 </html>

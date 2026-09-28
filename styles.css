@@ -229,8 +229,9 @@ a { color: inherit; }
   font-weight: 800;
   font-size: clamp(2rem, 5vw, 3rem);
   letter-spacing: -.03em;
-  line-height: 1.1;
-  margin-bottom: 2rem;
+  line-height: 1.15;
+  padding-bottom: .15em;
+  margin-bottom: 2.25rem;
   background: linear-gradient(180deg, var(--c6) 30%, var(--c4) 130%);
   -webkit-background-clip: text; background-clip: text;
   -webkit-text-fill-color: transparent; color: transparent;
@@ -267,7 +268,7 @@ a { color: inherit; }
   --mx: 50%; --my: 0%;
   position: relative; overflow: hidden;
   display: flex; flex-direction: column; width: 100%;
-  padding: 1.75rem;
+  padding: 2rem;
   background: var(--surface);
   border: 1px solid var(--line);
   border-radius: 24px;
@@ -285,7 +286,7 @@ a { color: inherit; }
 
 .project h3 { font-family: var(--display); font-size: 1.55rem; font-weight: 700; letter-spacing: -.02em; }
 
-.stack { display: flex; flex-wrap: wrap; gap: .4rem; margin-top: .85rem; }
+.stack { display: flex; flex-wrap: wrap; gap: .5rem; margin-top: 1rem; }
 .stack li {
   padding: .15rem .7rem;
   font-size: .82rem; font-weight: 600;
@@ -295,12 +296,12 @@ a { color: inherit; }
 }
 
 .project h4 {
-  margin: 1.4rem 0 .35rem;
+  margin: 1.5rem 0 .5rem;
   font-family: var(--display); font-size: .95rem; font-weight: 700; color: var(--c6);
 }
 .project p { color: var(--muted); font-size: .98rem; }
 .project .btn { margin-top: auto; align-self: flex-start; }
-.project p:last-of-type { margin-bottom: 1.6rem; }
+.project p:last-of-type { margin-bottom: 2rem; }
 
 /* ---------- Tabs ---------- */
 .tabs {
@@ -404,7 +405,7 @@ a { color: inherit; }
     transition-delay: var(--d, 0s);
   }
 
-  .js .section-title[data-reveal] { transform: translateY(40px); }
+  .js .section-title[data-reveal] { transform: translateY(18px); }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -465,25 +466,35 @@ a { color: inherit; }
 /* Móviles */
 @media (max-width: 480px) {
   body { font-size: 1rem; }
-  .container { width: min(100% - 2rem, 1080px); }
-  .section { padding-block: 2.75rem; }
-  .section-title { margin-bottom: 1.5rem; }
+  .container { width: min(100% - 2.5rem, 1080px); }
+  .section { padding-block: 3.75rem; }
+  .section-title { margin-bottom: 2rem; }
+  .sub { margin: 2.25rem 0 1rem; }
 
+  .hero { gap: 2.25rem; padding-block: 2rem 3.5rem; }
   .lead, .about, .contact p { font-size: 1.02rem; }
+  .about { gap: 1.25rem; }
+
+  .pills { gap: .75rem; }
+  .pills li { padding: .5rem 1rem; font-size: .93rem; }
+
+  /* Tarjetas con aire */
+  .projects { gap: 1.75rem; }
+  .project { padding: 1.6rem 1.4rem; border-radius: 20px; }
+  .project h3 { font-size: 1.4rem; }
 
   /* Botones cómodos para el dedo */
+  .actions { gap: 1rem; }
   .actions .btn { flex: 1 1 140px; }
   .contact .btn { width: 100%; }
   .project .btn { align-self: stretch; }
 
-  .project { padding: 1.4rem; border-radius: 20px; }
-  .project h3 { font-size: 1.4rem; }
-
   .tabs { display: flex; width: 100%; }
   .tab { flex: 1; padding-inline: .5rem; }
 
-  .pills li { padding: .45rem .95rem; font-size: .93rem; }
-  .site-footer .container { flex-direction: column; }
+  .timeline { gap: 2.75rem; }
+  .site-footer { padding-block: 2rem; }
+  .site-footer .container { flex-direction: column; gap: .75rem; }
 }
 
 /* Móviles muy pequeños */

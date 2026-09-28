@@ -151,7 +151,7 @@ a { color: inherit; }
 .hero h1 {
   font-family: var(--display);
   font-weight: 800;
-  font-size: clamp(2.3rem, 6vw, 4.4rem);
+  font-size: clamp(2.05rem, 6vw, 4.4rem);
   line-height: 1.04;
   letter-spacing: -.03em;
   text-wrap: balance;
@@ -413,38 +413,96 @@ a { color: inherit; }
 }
 
 /* ---------- Responsive ---------- */
+
+/* Pantallas grandes (monitores) */
+@media (min-width: 1400px) {
+  body { font-size: 1.12rem; }
+  .container { width: min(100% - 4rem, 1200px); }
+  .photo { width: min(100%, 480px); }
+  .projects { gap: 2rem; }
+}
+
+/* Tablets en vertical y móviles grandes */
 @media (max-width: 900px) {
-  .hero { grid-template-columns: 1fr; min-height: auto; text-align: left; }
-  .photo { order: -1; width: min(78vw, 340px); justify-self: start; }
-  .projects { grid-template-columns: 1fr; }
+  .t-item { gap: 3rem; }
 }
 
 @media (max-width: 760px) {
-  .menu-toggle { display: block; }
+  /* Hero: foto arriba y texto debajo */
+  .hero { grid-template-columns: 1fr; min-height: auto; gap: 2rem; padding-block: 2rem 3rem; }
+  .photo { order: -1; width: min(72vw, 320px); justify-self: start; }
 
+  /* Menú hamburguesa */
+  .menu-toggle { display: block; }
   .nav {
     position: absolute; top: var(--header-h); left: 0; right: 0;
     display: none;
+    max-height: calc(100svh - var(--header-h));
+    overflow-y: auto;
     background: rgba(1, 0, 3, .97);
     border-bottom: 1px solid var(--line);
     padding: .5rem 1.25rem 1rem;
   }
   .nav.open { display: block; }
   .nav ul { flex-direction: column; gap: 0; }
-  .nav a { display: block; padding: .85rem 0; border-bottom: 1px solid var(--line); font-size: 1.02rem; }
+  .nav a { display: block; padding: .95rem 0; border-bottom: 1px solid var(--line); font-size: 1.05rem; }
   .nav li:last-child a { border-bottom: 0; }
   .nav a::after { display: none; }
-  .nav a.active { color: var(--c5); }
+  .nav a.active { color: var(--c6); }
 
-  /* Timeline a una columna con la línea a la izquierda */
+  /* Proyectos en una columna */
+  .projects { grid-template-columns: 1fr; }
+
+  /* Línea de tiempo a una columna, con la línea a la izquierda */
   .timeline { gap: 2.5rem; }
   .timeline::before, .timeline::after { left: 7px; margin-left: -1.5px; }
-  .t-item { grid-template-columns: 1fr; gap: .75rem; padding-left: 2.25rem; }
+  .t-item { grid-template-columns: 1fr; gap: .6rem; padding-left: 2.25rem; }
   .t-item::before { left: 7px; }
+
+  .tabs { margin-bottom: 2.25rem; }
 }
 
+/* Móviles */
 @media (max-width: 480px) {
-  .project { padding: 1.4rem; }
-  .tabs { display: flex; }
-  .tab { flex: 1; padding-inline: .75rem; }
+  body { font-size: 1rem; }
+  .container { width: min(100% - 2rem, 1080px); }
+  .section { padding-block: 2.75rem; }
+  .section-title { margin-bottom: 1.5rem; }
+
+  .lead, .about, .contact p { font-size: 1.02rem; }
+
+  /* Botones cómodos para el dedo */
+  .actions .btn { flex: 1 1 140px; }
+  .contact .btn { width: 100%; }
+  .project .btn { align-self: stretch; }
+
+  .project { padding: 1.4rem; border-radius: 20px; }
+  .project h3 { font-size: 1.4rem; }
+
+  .tabs { display: flex; width: 100%; }
+  .tab { flex: 1; padding-inline: .5rem; }
+
+  .pills li { padding: .45rem .95rem; font-size: .93rem; }
+  .site-footer .container { flex-direction: column; }
+}
+
+/* Móviles muy pequeños */
+@media (max-width: 360px) {
+  .brand { font-size: 1.05rem; }
+  .photo { width: min(80vw, 280px); }
+}
+
+/* Celulares en horizontal (poca altura) */
+@media (max-height: 520px) and (orientation: landscape) {
+  .hero { min-height: auto; }
+}
+
+/* Pantallas táctiles: sin efectos hover que se queden "pegados" */
+@media (hover: none) {
+  .btn:hover,
+  .pills li:hover,
+  .project:hover { transform: none; box-shadow: none; }
+  .project:hover::before { opacity: 0; }
+  .nav a:hover::after { transform: scaleX(0); }
+  .nav a.active::after { transform: scaleX(1); }
 }

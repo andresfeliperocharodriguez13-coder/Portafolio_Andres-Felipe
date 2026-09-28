@@ -1,5 +1,4 @@
 "use strict";
-
 // Marca que JS está activo (los estilos de animación dependen de esto)
 document.documentElement.classList.add("js");
 
@@ -7,11 +6,11 @@ document.addEventListener("DOMContentLoaded", () => {
   const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   const hasIO = "IntersectionObserver" in window;
 
-  /* ---------- Año del footer ---------- */
+  /* Año del footer */
   const year = document.getElementById("year");
   if (year) year.textContent = new Date().getFullYear();
 
-  /* ---------- Foto: si no carga, muestra las iniciales ---------- */
+  /* si no carga, muestra las iniciales  */
   const photo = document.getElementById("photo");
   const photoImg = photo && photo.querySelector("img");
   if (photoImg) {
@@ -20,7 +19,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (photoImg.complete && photoImg.naturalWidth === 0) showFallback();
   }
 
-  /* ---------- Menú móvil ---------- */
+  /* Menú móvil*/
   const toggle = document.querySelector(".menu-toggle");
   const menu = document.getElementById("menu");
 
@@ -40,7 +39,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (e.key === "Escape") setMenu(false);
   });
 
-  /* ---------- Aparición al hacer scroll (con escalonado) ---------- */
+  /*Aparición al hacer scroll  */
   document.querySelectorAll("[data-stagger]").forEach((group) => {
     [...group.children].forEach((child, i) => {
       if (child.hasAttribute("data-reveal")) {
@@ -57,8 +56,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const revealItems = document.querySelectorAll("[data-reveal]");
   if (hasIO && !reduceMotion) {
-    // Sin unobserve: la animación se repite cada vez que el elemento
-    // entra o sale de pantalla, al subir y al bajar.
     const revealObserver = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -72,7 +69,6 @@ document.addEventListener("DOMContentLoaded", () => {
     revealItems.forEach((el) => el.classList.add("visible"));
   }
 
-  /* ---------- Enlace activo según la sección visible ---------- */
   const links = document.querySelectorAll(".nav a");
   const sections = [...links]
     .map((link) => document.querySelector(link.getAttribute("href")))
@@ -96,7 +92,7 @@ document.addEventListener("DOMContentLoaded", () => {
     sections.forEach((section) => navObserver.observe(section));
   }
 
-  /* ---------- Pestañas Experiencia / Formación ---------- */
+  /*  Pestañas Experiencia / Formación  */
   const tabs = [...document.querySelectorAll(".tab")];
   const indicator = document.querySelector(".tab-indicator");
 
@@ -129,7 +125,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  /* ---------- Línea de tiempo: se llena al hacer scroll ---------- */
+  /* Línea de tiempo: se llena al hacer scroll */
   const timelines = document.querySelectorAll(".timeline");
 
   function updateTimelines() {
@@ -142,7 +138,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  /* ---------- Barra de progreso + línea de tiempo (scroll) ---------- */
+  /* Barra de progreso + línea de tiempo */
   const progress = document.querySelector(".progress");
   let ticking = false;
 
@@ -176,7 +172,7 @@ document.addEventListener("DOMContentLoaded", () => {
   moveIndicator();
   onScroll();
 
-  /* ---------- Brillo que sigue al cursor (solo con mouse) ---------- */
+  /* Brillo que sigue al cursor (solo con mouse :)  */
   const glow = document.querySelector(".cursor-glow");
   const finePointer = window.matchMedia("(pointer: fine)").matches;
 
@@ -207,7 +203,7 @@ document.addEventListener("DOMContentLoaded", () => {
     follow();
   }
 
-  /* ---------- Luz dentro de las tarjetas de proyecto ---------- */
+  /* Luz dentro de las tarjetas de proyecto  */
   if (finePointer && !reduceMotion) {
     document.querySelectorAll(".project").forEach((card) => {
       card.addEventListener("pointermove", (e) => {
